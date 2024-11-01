@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
+
+:root {
+  --primary-color: #ff6565;
+  --carrousel-gap: 0;
+}
+
+section {
+  font-family: "Jaro";
+
+  place-items: center;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  text-align: center;
+  font-weight: bolder;
+
+  color: white;
+  background-color: var(--primary-color);
+}
+
+.hero-section__title {
+  font-size: 120px;
+  margin-bottom: -50px;
+}
+
+.hero-section__subtitle {
+  font-size: 35px;
+}
+
+.hero-section__carrousel {
+  display: flex;
+  overflow: hidden;
+  gap: var(--carrousel-gap);
+}
+
+.hero-section__carrousel:hover .carrousel__group {
+  animation-play-state: paused;
+}
+
+.carrousel__group {
+  display: flex;
+  flex-shrink: 0;
+
+  gap: var(--carrousel-gap);
+
+  will-change: transform;
+  animation: scrolling 10s linear infinite;
+}
+
+.carrousel__item {
+  border: 2px solid rgb(255, 255, 255);
+}
+
+@keyframes scrolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
