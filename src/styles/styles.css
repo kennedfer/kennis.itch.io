@@ -5,7 +5,8 @@
   --carrousel-gap: 0;
 }
 
-section {
+section,
+game-section {
   font-family: "Jaro";
 
   place-items: center;
@@ -38,7 +39,6 @@ section {
 .hero-section__carrousel {
   display: flex;
   overflow: hidden;
-  gap: var(--carrousel-gap);
 }
 
 .hero-section__carrousel:hover .carrousel__group {
@@ -48,8 +48,6 @@ section {
 .carrousel__group {
   display: flex;
   flex-shrink: 0;
-
-  gap: var(--carrousel-gap);
 
   will-change: transform;
   animation: scrolling 10s linear infinite;
