@@ -3,22 +3,34 @@
 :root {
   --primary-color: #ff6565;
   --carrousel-gap: 0;
+
+  --mobile-title-size: 60px;
+  --mobile-subtitle-size: 20px;
+  --mobile-title-margin: -20px;
+  --mobile-carrousel-height: 100px;
 }
 
-section,
-game-section {
+main {
+  max-height: 100vh;
+  overflow: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
   font-family: "Jaro";
 
   place-items: center;
   justify-content: center;
 
   height: 100vh;
+  scroll-snap-align: center;
 }
 
 .hero-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 
   text-align: center;
   font-weight: bolder;
@@ -28,17 +40,18 @@ game-section {
 }
 
 .hero-section__title {
-  font-size: 120px;
-  margin-bottom: -30px;
+  font-size: var(--mobile-title-size);
+  margin-bottom: var(--mobile-title-margin);
 }
 
 .hero-section__subtitle {
-  font-size: 35px;
+  font-size: var(--mobile-subtitle-size);
 }
 
 .hero-section__carrousel {
   display: flex;
   overflow: hidden;
+  height: var(--mobile-carrousel-height);
 }
 
 .hero-section__carrousel:hover .carrousel__group {
