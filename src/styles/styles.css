@@ -1,13 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
 
 :root {
-  --primary-color: #ff6565;
+  --primary-color: #ff6666;
+  --secondary-color: white;
   --carrousel-gap: 0;
 
   --mobile-title-size: 60px;
   --mobile-subtitle-size: 20px;
   --mobile-title-margin: -20px;
   --mobile-carrousel-height: 100px;
+  --mobile-buttons-font-size: 20px;
 }
 
 main {
@@ -15,10 +17,12 @@ main {
   overflow: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+
+  --font-family: "Jaro";
 }
 
 section {
-  font-family: "Jaro";
+  font-family: var(--font-family);
 
   place-items: center;
   justify-content: center;
