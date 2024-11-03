@@ -190,6 +190,11 @@ function createGameSections(games) {
   }
 
   document.querySelector("main").appendChild(fragment);
+  const loadWall = document.body.firstElementChild;
+  loadWall.style.opacity = 0;
+  setTimeout(() => {
+    loadWall.remove();
+  }, 2000);
 }
 
 async function getApiData() {

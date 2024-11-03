@@ -82,6 +82,20 @@ section {
   scroll-snap-align: center;
 }
 
+.load-wall {
+  display: grid;
+  place-items: center;
+
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+
+  transition: opacity 2s;
+
+  z-index: 2;
+  background-color: var(--primary-color);
+}
+
 .hero-section {
   display: flex;
   flex-direction: column;
