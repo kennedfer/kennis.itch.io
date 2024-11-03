@@ -10,11 +10,12 @@ function createCarrousel(images) {
 
   carrouselGroup.className = "carrousel__group";
 
-  for (const imageUrl of images) {
+  for (const { cover, title } of images) {
     const image = document.createElement("img");
 
-    image.src = imageUrl;
+    image.src = cover;
     image.className = "carrousel__item";
+    image.alt = `Capa do jogo "${title}"`
 
     carrouselGroup.appendChild(image);
   }

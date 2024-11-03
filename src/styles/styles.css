@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@32&display=swap");
 
 :root {
   --font-family: "Jaro";
@@ -10,9 +10,9 @@
   --title-size: 3.75rem; /* 60px */
   --subtitle-size: 1.25rem; /* 20px */
   --title-margin: -1.25rem; /* -20px */
-  --carrousel-height: 6.25rem; /* 100px */
+  --carrousel-height: 7.25rem; /* 100px */
 
-  --game-section-buttons-font-size: 1.25rem; /* 20px */
+  --game-section-buttons-font-size: 1.5rem; /* 20px */
   --game-section-font-title: 2.5rem; /* 40px */
   --game-section-font-subtitle: 1.25rem; /* 20px */
   --game-section-icons-size: 2rem;
@@ -20,18 +20,34 @@
 
 @media (min-width: 600px) {
   :root {
-    --title-size: 3rem;
-    --subtitle-size: 1.125rem;
-    --title-margin: -1.125rem;
-    --carrousel-height: 5rem;
-    --game-section-buttons-font-size: 1.125rem;
-    --game-section-font-title: 2.25rem;
-    --game-section-font-subtitle: 1.125rem;
-    --game-section-icons-size: 2rem;
+    --title-size: 7rem;
+    --subtitle-size: 2.5rem;
+    --title-margin: -2.5rem;
+    --carrousel-height: 10rem;
+
+    --game-section-buttons-font-size: 2.25rem;
+    --game-section-font-title: 4.5rem;
+    --game-section-font-subtitle: 2.25rem;
+    --game-section-icons-size: 3rem;
   }
 }
 
 @media (min-width: 1024px) {
+  :root {
+    --title-size: 7rem;
+    --subtitle-size: 2.5rem;
+    --title-margin: -3.25rem;
+    --carrousel-height: 10.75rem;
+
+    --game-section-buttons-font-size: 1.5rem;
+    --game-section-font-title: 3rem;
+    --game-section-font-subtitle: 1.5rem;
+    --game-section-icons-size: 2rem;
+    --game-section-padding: 100px;
+  }
+}
+
+@media (min-width: 1600px) {
   :root {
     --title-size: 10.75rem;
     --subtitle-size: 2.5rem;
@@ -42,6 +58,7 @@
     --game-section-font-title: 4.75rem;
     --game-section-font-subtitle: 2rem;
     --game-section-icons-size: 2.5rem;
+    --game-section-padding: 200px;
   }
 }
 
@@ -57,6 +74,8 @@ main {
 
 section {
   font-family: var(--font-family);
+  font-variation-settings: "wght" 400;
+  font-weight: 100;
 
   place-items: center;
   justify-content: center;
@@ -97,7 +116,7 @@ section {
   flex-shrink: 0;
 
   will-change: transform;
-  animation: scrolling 10s linear infinite;
+  animation: scrolling 20s linear infinite;
 }
 
 .carrousel__item {

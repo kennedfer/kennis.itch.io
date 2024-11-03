@@ -56,10 +56,6 @@ class GameSection extends HTMLElement {
         display: flex;
         gap: 10px;
       }
-  
-      .game-section__cover-image{
-        border: 2px solid white;
-      }
 
       .info-container__texts{
         padding: 20px;
@@ -144,18 +140,18 @@ class GameSection extends HTMLElement {
         section {
           flex-direction: row;
           gap: 20px;
-          padding: 200px;
-          height: calc(100vh - 400px)
+          padding: var(--game-section-padding);
+          height: calc(100vh - var(--game-section-padding) * 2);
         }
 
         .game-section__cover-image{
-          
+          border: 2px solid white;
         }
       }
     </style>
 
     <section>
-      <img class="game-section__cover-image" src="${this.cover_url}"/>
+      <img alt="Capa do jogo ${this.title}" class="game-section__cover-image" src="${this.cover_url}"/>
       <div class="game-section__info-container">
         <div class="info-container__texts">
           <h2>${this.title}</h2>
