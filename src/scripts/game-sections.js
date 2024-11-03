@@ -113,13 +113,13 @@ class GameSection extends HTMLElement {
       }
 
       .icon-view{
-        background-image: url("/public/assets/images/icons/view.svg"); 
+        background-image: url("public/assets/images/icons/view.svg"); 
         background-size: contain;
         background-repeat: no-repeat;
       }
 
       .icon-download{
-        background-image: url("/public/assets/images/icons/download.svg"); 
+        background-image: url("public/assets/images/icons/download.svg"); 
         background-size: contain;
         background-repeat: no-repeat;
       }
