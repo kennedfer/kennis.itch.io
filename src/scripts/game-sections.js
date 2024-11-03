@@ -85,7 +85,7 @@ class GameSection extends HTMLElement {
 
       a, img{
         cursor:pointer;
-        transition: 0.1s;
+        transition: scale 0.1s;
       }
 
       a:hover,  img:hover{
@@ -140,7 +140,7 @@ class GameSection extends HTMLElement {
         font-size: var(--game-section-icons-size: 2.5rem);
       }
 
-      @media (min-width: 768px) {
+      @media (min-aspect-ratio:1) {
         section {
           flex-direction: row;
           gap: 20px;
