@@ -1,24 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap");
 
 :root {
+  --font-family: "Jaro";
+
   --primary-color: #ff6666;
   --secondary-color: white;
   --carrousel-gap: 0;
 
-  --mobile-title-size: 60px;
-  --mobile-subtitle-size: 20px;
-  --mobile-title-margin: -20px;
-  --mobile-carrousel-height: 100px;
-  --mobile-buttons-font-size: 20px;
+  --title-size: 3.75rem; /* 60px */
+  --subtitle-size: 1.25rem; /* 20px */
+  --title-margin: -1.25rem; /* -20px */
+  --carrousel-height: 6.25rem; /* 100px */
+
+  --game-section-buttons-font-size: 1.25rem; /* 20px */
+  --game-section-font-title: 2.5rem; /* 40px */
+  --game-section-font-subtitle: 1.25rem; /* 20px */
+  --game-section-icons-size: 2rem;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --title-size: 3rem;
+    --subtitle-size: 1.125rem;
+    --title-margin: -1.125rem;
+    --carrousel-height: 5rem;
+    --game-section-buttons-font-size: 1.125rem;
+    --game-section-font-title: 2.25rem;
+    --game-section-font-subtitle: 1.125rem;
+    --game-section-icons-size: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --title-size: 10.75rem;
+    --subtitle-size: 2.5rem;
+    --title-margin: -3.25rem;
+    --carrousel-height: 16.25rem;
+
+    --game-section-buttons-font-size: 2.5rem;
+    --game-section-font-title: 4.75rem;
+    --game-section-font-subtitle: 2rem;
+    --game-section-icons-size: 2.5rem;
+  }
 }
 
 main {
   max-height: 100vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  scrollbar-width: thin;
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
 
-  --font-family: "Jaro";
+  background-color: var(--primary-color);
 }
 
 section {
@@ -44,22 +78,18 @@ section {
 }
 
 .hero-section__title {
-  font-size: var(--mobile-title-size);
-  margin-bottom: var(--mobile-title-margin);
+  font-size: var(--title-size);
+  margin-bottom: var(--title-margin);
 }
 
 .hero-section__subtitle {
-  font-size: var(--mobile-subtitle-size);
+  font-size: var(--subtitle-size);
 }
 
 .hero-section__carrousel {
   display: flex;
   overflow: hidden;
-  height: var(--mobile-carrousel-height);
-}
-
-.hero-section__carrousel:hover .carrousel__group {
-  animation-play-state: paused;
+  height: var(--carrousel-height);
 }
 
 .carrousel__group {

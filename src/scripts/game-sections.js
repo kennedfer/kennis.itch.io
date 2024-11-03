@@ -37,10 +37,6 @@ class GameSection extends HTMLElement {
         font-family: var(--font-family);
       }
 
-      .game-section__cover-image{
-        // border: 20px solid var(--primary-color);
-      }
-
       .game-section__info-container{
         display:flex;
         flex-direction: column;
@@ -53,15 +49,16 @@ class GameSection extends HTMLElement {
       
       .game-section__visitors-info{
         display: flex;
-        gap: 5px;
+        gap: 25px;
       }
 
-      .game-section__visitors-info > img{
-        width: 18px;
-        aspect-ratio: 1;
-        margin-right: -6px;
-
-        padding: 5px;
+      .game-section__visitors-info > div{
+        display: flex;
+        gap: 10px;
+      }
+  
+      .game-section__cover-image{
+        border: 2px solid white;
       }
 
       .info-container__texts{
@@ -73,15 +70,30 @@ class GameSection extends HTMLElement {
         flex-direction: column;
 
         margin-top: auto;
-        background:red;
       }
 
-      .info-container__buttons-container > button{
+      .info-container__buttons-container > a{
         margin-top: auto;
         padding: 20px;
 
-        font-size: var(--mobile-buttons-font-size);
+        text-align: center;
+        text-decoration: none;
+
+        font-size: var(--game-section-buttons-font-size);
         font-family: var(--font-family);
+      }
+
+      a, img{
+        cursor:pointer;
+        transition: 0.1s;
+      }
+
+      a:hover,  img:hover{
+        scale: 1.025;
+      }
+
+      a:active, img:active{
+        scale: 1;
       }
 
       .info-container__download-button{
@@ -96,6 +108,50 @@ class GameSection extends HTMLElement {
         background-color:  var(--primary-color);
         border: 2px solid var(--secondary-color);
       }
+
+      .icon{
+        min-width: var(--game-section-icons-size);
+        min-height: var(--game-section-icons-size)
+
+        aspect-ratio:1;
+      }
+
+      .icon-view{
+        background-image: url("/public/assets/images/icons/view.svg"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .icon-download{
+        background-image: url("/public/assets/images/icons/download.svg"); 
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      h2{
+        font-size: var(--game-section-font-title);
+      }
+
+      h3, span{
+        font-size: var(--game-section-font-subtitle);
+      }
+
+      span{
+        font-size: var(--game-section-icons-size: 2.5rem);
+      }
+
+      @media (min-width: 768px) {
+        section {
+          flex-direction: row;
+          gap: 20px;
+          padding: 200px;
+          height: calc(100vh - 400px)
+        }
+
+        .game-section__cover-image{
+          
+        }
+      }
     </style>
 
     <section>
@@ -105,15 +161,19 @@ class GameSection extends HTMLElement {
           <h2>${this.title}</h2>
           <h3>${this.description}</h3>
           <div class="game-section__visitors-info">
-            <img src="/public/assets/images/icons/view.svg"/>
-            <span>${this.views_count}</span>
-            <img src="/public/assets/images/icons/download.svg"/>
-            <span>${this.downloads_count}</span>
+            <div>
+              <div class="icon-view icon"></div>
+              <span>${this.views_count}</span>
+            </div>
+            <div>
+              <div class="icon-download icon"></div>
+              <span>${this.downloads_count}</span>
+            </div>
         </div>
         </div>
         <div class="info-container__buttons-container">
-          <button class="info-container__goto-page-button">IR PARA A PÁGINA</button>
-          <button class="info-container__download-button">BAIXAR</button>
+          <a href="${this.url}" class="info-container__goto-page-button">IR PARA A PÁGINA</a>
+          <a href="${this.url}/purchase" class="info-container__download-button">BAIXAR</a>
         </div>
       </div>
     </section>
