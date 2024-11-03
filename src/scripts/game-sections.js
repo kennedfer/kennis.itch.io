@@ -31,9 +31,8 @@ class GameSection extends HTMLElement {
         flex-direction: column;
         gap:0;
 
-        height:100vh;
-        scroll-snap-align: center;
-        
+        height: 100dvh;
+
         font-family: var(--font-family);
       }
 
@@ -141,11 +140,13 @@ class GameSection extends HTMLElement {
           flex-direction: row;
           gap: 20px;
           padding: var(--game-section-padding);
-          height: calc(100vh - var(--game-section-padding) * 2);
+          height: calc(100dvh - var(--game-section-padding) * 2);
         }
 
         .game-section__cover-image{
           border: 2px solid white;
+          flex-grow: 1;
+          flex-shrink:0;
         }
       }
     </style>

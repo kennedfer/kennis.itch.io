@@ -64,8 +64,6 @@ main {
   max-height: 100vh;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 
   background-color: var(--primary-color);
 }
@@ -78,7 +76,7 @@ section {
   place-items: center;
   justify-content: center;
 
-  height: 100vh;
+  height: 100dvh;
   scroll-snap-align: center;
 }
 
@@ -87,7 +85,7 @@ section {
   place-items: center;
 
   position: absolute;
-  height: 100vh;
+  height: 100dvh;
   width: 100vw;
 
   transition: opacity 2s;
